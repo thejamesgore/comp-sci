@@ -1,4 +1,4 @@
-export function bubbleSort(array) {
+export const bubbleSort = (array) => {
   let animations = []
   let n = array.length
   let arr = array.slice()
@@ -14,3 +14,7 @@ export function bubbleSort(array) {
   }
   return animations
 }
+
+export const selectionSort = (array) => {}
+
+export const insertionSort = (array) => {}
