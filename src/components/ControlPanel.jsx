@@ -1,19 +1,15 @@
 import React, { useState } from 'react'
-import { generateRandomArray } from '../utils/utils'
 
-const ControlPanel = ({
-  onGenerateNewArray,
-  onStartSort,
-  onAlgorithmChange,
-}) => {
+const ControlPanel = ({ onGenerateNewArray, onStartSort }) => {
   const [arraySize, setArraySize] = useState(50)
   const [isSorting, setIsSorting] = useState(false)
-  const [selectedAlgorithm, setSelectedAlgorithm] = useState('Bubble Sort')
 
   const handleGenerateArray = () => {
-    const array = generateRandomArray(arraySize)
+    const array = Array.from({ length: arraySize }, () =>
+      Math.floor(Math.random() * 100)
+    )
     onGenerateNewArray(array)
-    setIsSorting(false) // Reset sorting state when generating a new array
+    setIsSorting(false)
   }
 
   const handleArraySizeChange = (e) => {
@@ -25,19 +21,12 @@ const ControlPanel = ({
     onStartSort()
   }
 
-  const handleAlgorithmChange = (e) => {
-    const algorithm = e.target.value
-    setSelectedAlgorithm(algorithm)
-    onAlgorithmChange(algorithm)
-  }
-
   return (
     <div className="control-panel">
-      <select value={selectedAlgorithm} onChange={handleAlgorithmChange}>
-        <option value="bubbleSort">Bubble Sort</option>
-        <option value="mergeSort">Merge Sort</option>
-        <option value="quickSort">Quick Sort</option>
-        {/* Add more options as needed */}
+      <select>
+        <option>Bubble Sort</option>
+        <option>Merge Sort</option>
+        <option>Quick Sort</option>
       </select>
       <label>
         Array Size: {arraySize}
@@ -50,12 +39,8 @@ const ControlPanel = ({
         />
       </label>
       <button onClick={handleGenerateArray}>Generate New Array</button>
-      <button onClick={handleStartSort} disabled={isSorting}>
-        Start
-      </button>
-      <div className={`array-container ${isSorting ? 'sorting' : ''}`}>
-        {/* Assuming array bars are rendered here */}
-      </div>
+      <button onClick={handleStartSort}>Start</button>
+      <div className={`array-container ${isSorting ? 'sorting' : ''}`}></div>
     </div>
   )
 }
