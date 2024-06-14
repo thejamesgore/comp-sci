@@ -1,9 +1,14 @@
 import React, { useState } from 'react'
 import { generateRandomArray } from '../utils/utils'
 
-const ControlPanel = ({ onGenerateNewArray, onStartSort }) => {
+const ControlPanel = ({
+  onGenerateNewArray,
+  onStartSort,
+  onAlgorithmChange,
+}) => {
   const [arraySize, setArraySize] = useState(50)
   const [isSorting, setIsSorting] = useState(false)
+  const [selectedAlgorithm, setSelectedAlgorithm] = useState('Bubble Sort')
 
   const handleGenerateArray = () => {
     const array = generateRandomArray(arraySize)
@@ -20,12 +25,18 @@ const ControlPanel = ({ onGenerateNewArray, onStartSort }) => {
     onStartSort()
   }
 
+  const handleAlgorithmChange = (e) => {
+    const algorithm = e.target.value
+    setSelectedAlgorithm(algorithm)
+    onAlgorithmChange(algorithm)
+  }
+
   return (
     <div className="control-panel">
-      <select>
-        <option>Bubble Sort</option>
-        <option>Merge Sort</option>
-        <option>Quick Sort</option>
+      <select value={selectedAlgorithm} onChange={handleAlgorithmChange}>
+        <option value="bubbleSort">Bubble Sort</option>
+        <option value="mergeSort">Merge Sort</option>
+        <option value="quickSort">Quick Sort</option>
         {/* Add more options as needed */}
       </select>
       <label>
@@ -39,7 +50,9 @@ const ControlPanel = ({ onGenerateNewArray, onStartSort }) => {
         />
       </label>
       <button onClick={handleGenerateArray}>Generate New Array</button>
-      <button onClick={handleStartSort}>Start</button>
+      <button onClick={handleStartSort} disabled={isSorting}>
+        Start
+      </button>
       <div className={`array-container ${isSorting ? 'sorting' : ''}`}>
         {/* Assuming array bars are rendered here */}
       </div>

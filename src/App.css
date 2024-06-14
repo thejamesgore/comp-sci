@@ -71,12 +71,11 @@ header p {
   transition: height 0.1s ease;
 }
 
-/* Color Coding */
-.bar.compare {
+.bar-being-compared {
   background-color: red;
 }
 
-.bar.sorted {
+.bar-sorted {
   background-color: green;
 }
 

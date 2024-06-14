@@ -1,9 +1,9 @@
-// src/components/Visualizer.jsx
 import { useEffect, useState } from 'react'
 
 export default function Visualizer({ array, animations }) {
   const [localArray, setLocalArray] = useState(array)
   const [localAnimations, setLocalAnimations] = useState([])
+  const [comparingIndices, setComparingIndices] = useState([-1, -1])
 
   useEffect(() => {
     setLocalArray(array)
@@ -12,19 +12,31 @@ export default function Visualizer({ array, animations }) {
 
   useEffect(() => {
     if (localAnimations.length === 0) return
+
     const [i, j] = localAnimations[0]
-    setTimeout(() => {
+    setComparingIndices([i, j])
+
+    const timer = setTimeout(() => {
       const newArray = localArray.slice()
       ;[newArray[i], newArray[j]] = [newArray[j], newArray[i]]
       setLocalArray(newArray)
       setLocalAnimations(localAnimations.slice(1))
+      setComparingIndices([-1, -1])
     }, 10)
+
+    return () => clearTimeout(timer)
   }, [localAnimations, localArray])
 
   return (
     <div className="visualizer">
       {localArray.map((value, index) => (
-        <div key={index} className="bar" style={{ height: `${value}px` }}></div>
+        <div
+          key={index}
+          className={`bar ${
+            comparingIndices.includes(index) ? 'bar-being-compared' : ''
+          }`}
+          style={{ height: `${value}px` }}
+        ></div>
       ))}
     </div>
   )

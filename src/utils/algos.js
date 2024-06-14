@@ -1,3 +1,5 @@
+// implement the other algos later on and add any to your switch and control panel
+
 export const bubbleSort = (array) => {
   let animations = []
   let n = array.length
@@ -15,6 +17,12 @@ export const bubbleSort = (array) => {
   return animations
 }
 
-export const selectionSort = (array) => {}
+export const mergeSort = (array) => {
+  let animations = []
+  return animations
+}
 
-export const insertionSort = (array) => {}
+export const quickSort = (array) => {
+  let animations = []
+  return animations
+}
