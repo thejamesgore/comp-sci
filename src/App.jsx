@@ -5,7 +5,7 @@ import './App.css'
 import Header from './components/Header'
 import ControlPanel from './components/ControlPanel'
 import Visualiser from './components/Visualiser'
-import { bubbleSort } from './utils/algos'
+import { bubbleSort, selectionSort, insertionSort } from './utils/algos'
 import { generateRandomArray } from './utils/utils'
 
 function App() {
@@ -22,7 +22,10 @@ function App() {
   }
 
   const startSort = () => {
-    const animations = bubbleSort(array)
+    let animations
+
+    // add whatever algos to a switch
+
     setAnimations(animations)
   }
 
