@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
+import { generateRandomArray } from '../utils/utils'
 
 const ControlPanel = ({ onGenerateNewArray, onStartSort }) => {
   const [arraySize, setArraySize] = useState(50)
   const [isSorting, setIsSorting] = useState(false)
 
   const handleGenerateArray = () => {
-    const array = Array.from({ length: arraySize }, () =>
-      Math.floor(Math.random() * 100)
-    )
+    const array = generateRandomArray(arraySize)
     onGenerateNewArray(array)
     setIsSorting(false) // Reset sorting state when generating a new array
   }
