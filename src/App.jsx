@@ -27,7 +27,7 @@ function App() {
       <Header />
       <ControlPanel
         onGenerateNewArray={generateNewArray}
-        onStarteSort={startSort}
+        onStartSort={startSort}
       />
       <Visualiser array={array} animations={animations} />
     </div>

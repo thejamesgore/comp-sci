@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 
-const ControlPanel = ({ onGenerateNewArray, onStarteSort }) => {
-  const [arraySize, setArraySize] = useState()
+const ControlPanel = ({ onGenerateNewArray, onStartSort }) => {
+  const [arraySize, setArraySize] = useState(50)
 
-  //   nice little call back function to randomly create an array
   const handleGenerateArray = () => {
-    const array = Array.from({ length: 50 }, () =>
+    const array = Array.from({ length: arraySize }, () =>
       Math.floor(Math.random() * 100)
     )
     onGenerateNewArray(array)
@@ -16,7 +15,7 @@ const ControlPanel = ({ onGenerateNewArray, onStarteSort }) => {
   }
 
   const handleStartSort = () => {
-    onStarteSort()
+    onStartSort()
   }
 
   return (
