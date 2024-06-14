@@ -1,24 +1,22 @@
 import React, { useState } from 'react'
 
-const ControlPanel = ({ onGenerateNewArray, onStartSort }) => {
-  const [arraySize, setArraySize] = useState(50)
+const ControlPanel = ({ onGenerateNewArray, onStarteSort }) => {
+  const [arraySize, setArraySize] = useState()
 
-  // Function to generate a new array based on the current array size
+  //   nice little call back function to randomly create an array
   const handleGenerateArray = () => {
-    const array = Array.from({ length: arraySize }, () =>
+    const array = Array.from({ length: 50 }, () =>
       Math.floor(Math.random() * 100)
     )
     onGenerateNewArray(array)
   }
 
-  // Function to start the sorting process
-  const handleStartSort = () => {
-    onStartSort()
-  }
-
-  // Function to handle array size change
   const handleArraySizeChange = (e) => {
     setArraySize(e.target.value)
+  }
+
+  const handleStartSort = () => {
+    onStarteSort()
   }
 
   return (
@@ -30,12 +28,12 @@ const ControlPanel = ({ onGenerateNewArray, onStartSort }) => {
         {/* Add more options as needed */}
       </select>
       <label>
-        Array Size:
+        Array Size: {arraySize}
         <input
+          value={arraySize}
           type="range"
           min="10"
           max="100"
-          value={arraySize}
           onChange={handleArraySizeChange}
         />
       </label>
