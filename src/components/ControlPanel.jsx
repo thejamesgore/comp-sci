@@ -1,6 +1,14 @@
 import React from 'react'
 
-const ControlPanel = () => {
+const ControlPanel = ({ onGenerateNewArray }) => {
+  //   nice little call back function to randomly create an array
+  const handleGenerateArray = () => {
+    const array = Array.from({ length: 50 }, () =>
+      Math.floor(Math.random() * 100)
+    )
+    onGenerateNewArray(array)
+  }
+
   return (
     <div className="control-panel">
       <select>
@@ -11,7 +19,7 @@ const ControlPanel = () => {
       </select>
       <input type="range" min="10" max="100" />
       <input type="range" min="1" max="100" />
-      <button>Generate New Array</button>
+      <button onClick={handleGenerateArray}>Generate New Array</button>
       <button>Start</button>
     </div>
   )
