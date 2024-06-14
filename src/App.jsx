@@ -5,7 +5,7 @@ import './App.css'
 import Header from './components/Header'
 import ControlPanel from './components/ControlPanel'
 import Visualiser from './components/Visualiser'
-import { bubbleSort } from './sortingAlgos/bubbleSort'
+import { bubbleSort } from './sortingAlgos/algos'
 
 function App() {
   const [array, setArray] = useState([50, 40, 30, 20, 10])
@@ -19,8 +19,6 @@ function App() {
     const animations = bubbleSort(array)
     setAnimations(animations)
   }
-
-  console.log(`array is ->>`, array)
 
   return (
     <div className="App">

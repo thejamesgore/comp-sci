@@ -2,12 +2,14 @@ import React, { useState } from 'react'
 
 const ControlPanel = ({ onGenerateNewArray, onStartSort }) => {
   const [arraySize, setArraySize] = useState(50)
+  const [isSorting, setIsSorting] = useState(false)
 
   const handleGenerateArray = () => {
     const array = Array.from({ length: arraySize }, () =>
       Math.floor(Math.random() * 100)
     )
     onGenerateNewArray(array)
+    setIsSorting(false) // Reset sorting state when generating a new array
   }
 
   const handleArraySizeChange = (e) => {
@@ -15,6 +17,7 @@ const ControlPanel = ({ onGenerateNewArray, onStartSort }) => {
   }
 
   const handleStartSort = () => {
+    setIsSorting(true)
     onStartSort()
   }
 
@@ -38,6 +41,9 @@ const ControlPanel = ({ onGenerateNewArray, onStartSort }) => {
       </label>
       <button onClick={handleGenerateArray}>Generate New Array</button>
       <button onClick={handleStartSort}>Start</button>
+      <div className={`array-container ${isSorting ? 'sorting' : ''}`}>
+        {/* Assuming array bars are rendered here */}
+      </div>
     </div>
   )
 }
