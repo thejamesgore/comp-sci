@@ -6,12 +6,9 @@ export default function Visualizer({ array, animations, speed }) {
   const [comparingIndices, setComparingIndices] = useState([-1, -1])
 
   useEffect(() => {
-    console.log('Array prop changed:', array)
-    console.log('Animations prop changed:', animations)
-
-    setLocalArray([...array]) // Ensure new array instance
-    setLocalAnimations([...animations]) // Ensure new animations instance
-    setComparingIndices([-1, -1]) // Reset comparing indices
+    setLocalArray([...array])
+    setLocalAnimations([...animations])
+    setComparingIndices([-1, -1])
   }, [array, animations])
 
   useEffect(() => {

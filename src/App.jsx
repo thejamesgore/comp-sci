@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import Header from './components/Header'
-import ControlPanel from './components/ControlPanel'
-import Visualiser from './components/Visualiser'
+import { Header, ControlPanel, Visualizer, Statistics } from './components'
 import { bubbleSort, mergeSort, quickSort } from './utils/algos'
 import { generateRandomArray } from './utils/utils'
 

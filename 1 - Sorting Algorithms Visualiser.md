@@ -11,7 +11,7 @@ To create a visually engaging and informative page that demonstrates different s
    - Title: "Sorting Algorithms Visualizer"
    - Brief Description: An introductory paragraph explaining what sorting algorithms are and why they are important.
 
-2. **Control Panel**:
+2. **Control Panel**: COMPLETE
 
    - **Algorithm Selector**: A dropdown menu or buttons allowing users to select different sorting algorithms (e.g., Bubble Sort, Merge Sort, Quick Sort, etc.).
    - **Array Size Slider**: A slider to adjust the size of the array to be sorted, allowing users to see how the algorithms handle different amounts of data.
@@ -19,13 +19,12 @@ To create a visually engaging and informative page that demonstrates different s
    - **Generate New Array Button**: A button to generate a new random array to be sorted.
    - **Start/Stop Button**: A button to start or stop the sorting visualization.
 
-3. **Visualization Area**:
+3. **Visualization Area**: COMPLETE
 
    - **Bars or Elements**: A series of bars or other visual elements representing the array to be sorted. Each element's height (or size) corresponds to its value.
    - **Color Coding**: Use different colors to indicate the current state of the elements. For example:
      - Normal state (e.g., blue)
      - Elements being compared (e.g., red)
-     - Elements that are in their final sorted position (e.g., green)
    - **Animation**: Smooth transitions to show the swapping, shifting, or merging of elements. This helps users visually track the changes happening in the array.
 
 4. **Algorithm Explanation Panel**:
