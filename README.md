@@ -1,6 +1,14 @@
 # comp-sci
 
-A visual demonstration of CompSci concepts and demo of my knowledge/understanding of those concepts.
+A visual demonstration of CompSci concepts and serves as a showcase of my understanding of these topics. By visualizing and explaining these concepts, I aim to reinforce my knowledge and address any gaps in my understanding. This process not only helps me but also offers a valuable resource for others learning these concepts.
+
+Concepts to cover:
+
+- Sorting algorithms
+- Data structures
+- Graph algorithms
+- Dynamic Programming
+- String Algorithms
 
 ## Bugs / Challenges
 
