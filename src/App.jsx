@@ -10,6 +10,7 @@ function App() {
   const [array, setArray] = useState([50, 40, 30, 20, 10])
   const [animations, setAnimations] = useState([])
   const [selectedAlgorithm, setSelectedAlgorithm] = useState('bubbleSort')
+  const [speed, setSpeed] = useState(10)
 
   useEffect(() => {
     const initialArray = generateRandomArray(50)
@@ -39,6 +40,10 @@ function App() {
     setAnimations(animations)
   }
 
+  const handleSpeedChange = (newSpeed) => {
+    setSpeed(newSpeed)
+  }
+
   return (
     <div className="App">
       <Header />
@@ -46,8 +51,9 @@ function App() {
         onGenerateNewArray={generateNewArray}
         onStartSort={startSort}
         onAlgorithmChange={setSelectedAlgorithm}
+        onSpeedChange={handleSpeedChange}
       />
-      <Visualiser array={array} animations={animations} />
+      <Visualiser array={array} animations={animations} speed={speed} />
     </div>
   )
 }

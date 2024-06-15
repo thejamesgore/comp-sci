@@ -4,9 +4,11 @@ const ControlPanel = ({
   onGenerateNewArray,
   onStartSort,
   onAlgorithmChange,
+  onSpeedChange,
 }) => {
   const [arraySize, setArraySize] = useState(50)
   const [isSorting, setIsSorting] = useState(false)
+  const [speed, setSpeed] = useState(10)
 
   const handleGenerateArray = () => {
     const array = Array.from({ length: arraySize }, () =>
@@ -18,6 +20,12 @@ const ControlPanel = ({
 
   const handleArraySizeChange = (e) => {
     setArraySize(e.target.value)
+  }
+
+  const handleSpeedChange = (e) => {
+    const newSpeed = e.target.value
+    setSpeed(newSpeed)
+    onSpeedChange(newSpeed)
   }
 
   const handleStartSort = () => {
@@ -41,6 +49,17 @@ const ControlPanel = ({
           max="100"
           onChange={handleArraySizeChange}
         />
+      </label>
+      <label>
+        Speed: Faster
+        <input
+          value={speed}
+          type="range"
+          min="5"
+          max="20"
+          onChange={handleSpeedChange}
+        />{' '}
+        Slower
       </label>
       <button onClick={handleGenerateArray}>Generate New Array</button>
       <button onClick={handleStartSort}>Start</button>
