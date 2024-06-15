@@ -8,7 +8,7 @@ const ControlPanel = ({
 }) => {
   const [arraySize, setArraySize] = useState(50)
   const [isSorting, setIsSorting] = useState(false)
-  const [speed, setSpeed] = useState(10)
+  const [speed, setSpeed] = useState(20)
 
   const handleGenerateArray = () => {
     const array = Array.from({ length: arraySize }, () =>
