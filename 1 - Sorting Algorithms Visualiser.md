@@ -8,18 +8,18 @@ To create a visually engaging and informative page that demonstrates different s
 
 1. **Header**:
 
-   - Title: "Sorting Algorithms Visualizer"
+   - Title: "Sorting Algorithms visualiser"
    - Brief Description: An introductory paragraph explaining what sorting algorithms are and why they are important.
 
 2. **Control Panel**: COMPLETE
 
    - **Algorithm Selector**: A dropdown menu or buttons allowing users to select different sorting algorithms (e.g., Bubble Sort, Merge Sort, Quick Sort, etc.).
    - **Array Size Slider**: A slider to adjust the size of the array to be sorted, allowing users to see how the algorithms handle different amounts of data.
-   - **Speed Control**: A slider or buttons to control the speed of the visualization, so users can slow down or speed up the sorting process.
+   - **Speed Control**: A slider or buttons to control the speed of the visualisation, so users can slow down or speed up the sorting process.
    - **Generate New Array Button**: A button to generate a new random array to be sorted.
-   - **Start/Stop Button**: A button to start or stop the sorting visualization.
+   - **Start/Stop Button**: A button to start or stop the sorting visualisation.
 
-3. **Visualization Area**: COMPLETE
+3. **visualisation Area**: COMPLETE
 
    - **Bars or Elements**: A series of bars or other visual elements representing the array to be sorted. Each element's height (or size) corresponds to its value.
    - **Color Coding**: Use different colors to indicate the current state of the elements. For example:
@@ -30,7 +30,7 @@ To create a visually engaging and informative page that demonstrates different s
 4. **Algorithm Explanation Panel**:
 
    - Text area or modal that explains the steps of the selected algorithm in plain language.
-   - Optional: An animated or step-by-step textual guide that synchronizes with the visualizer to highlight what the algorithm is doing at each step.
+   - Optional: An animated or step-by-step textual guide that synchronizes with the visualiser to highlight what the algorithm is doing at each step.
 
 5. **Statistics Panel**:
 
@@ -38,25 +38,25 @@ To create a visually engaging and informative page that demonstrates different s
    - **Time Elapsed**: Shows the time taken to sort the array.
 
 6. **Responsive Design**:
-   - Ensure the visualizer is responsive and works well on various devices, including desktops, tablets, and mobile phones.
+   - Ensure the visualiser is responsive and works well on various devices, including desktops, tablets, and mobile phones.
 
 ### User Experience Flow
 
 1. **Landing on the Page**:
 
-   - Users are greeted with a brief introduction to sorting algorithms and the purpose of the visualizer.
-   - Clear instructions on how to use the control panel to select an algorithm, adjust settings, and start the visualization.
+   - Users are greeted with a brief introduction to sorting algorithms and the purpose of the visualiser.
+   - Clear instructions on how to use the control panel to select an algorithm, adjust settings, and start the visualisation.
 
 2. **Selecting an Algorithm and Configuring Settings**:
 
    - Users choose a sorting algorithm from the dropdown or buttons.
-   - They adjust the array size and visualization speed using the sliders.
-   - They generate a new array and start the visualization.
+   - They adjust the array size and visualisation speed using the sliders.
+   - They generate a new array and start the visualisation.
 
-3. **Watching the Visualization**:
+3. **Watching the visualisation**:
 
    - Users watch as the array elements are sorted in real-time.
-   - They can pause and resume the visualization as needed.
+   - They can pause and resume the visualisation as needed.
    - They observe the color changes and animations to understand the sorting process.
 
 4. **Learning and Comparing**:
@@ -64,4 +64,4 @@ To create a visually engaging and informative page that demonstrates different s
    - They can reset and select different algorithms to compare their performance and behavior.
    - They can see the statistics update in real-time, providing insights into the efficiency of each algorithm.
 
-By focusing on these design elements and user experience flows, I can create an engaging and educational sorting algorithm visualizer that helps users understand and compare different sorting methods effectively.
+By focusing on these design elements and user experience flows, I can create an engaging and educational sorting algorithm visualiser that helps users understand and compare different sorting methods effectively.

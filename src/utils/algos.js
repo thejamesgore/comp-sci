@@ -8,10 +8,10 @@ export const bubbleSort = (array) => {
   for (let i = 0; i < n - 1; i++) {
     for (let j = 0; j < n - i - 1; j++) {
       // Record the comparison
-      animations.push([j, j + 1, false])
+      animations.push([j, j + 1, 'compare'])
       if (arr[j] > arr[j + 1]) {
         // Record the swap
-        animations.push([j, j + 1, true])
+        animations.push([j, j + 1, 'swap'])
         let temp = arr[j]
         arr[j] = arr[j + 1]
         arr[j + 1] = temp
@@ -29,13 +29,15 @@ export const selectionSort = (array) => {
   for (let i = 0; i < n - 1; i++) {
     let minIdx = i
     for (let j = i + 1; j < n; j++) {
-      animations.push([i, j, false])
+      // Record the comparison
+      animations.push([minIdx, j, 'compare'])
       if (arr[j] < arr[minIdx]) {
         minIdx = j
       }
     }
     if (minIdx !== i) {
-      animations.push([i, minIdx, true])
+      // Record the swap
+      animations.push([i, minIdx, 'swap'])
       let temp = arr[i]
       arr[i] = arr[minIdx]
       arr[minIdx] = temp
@@ -46,10 +48,63 @@ export const selectionSort = (array) => {
 
 export const mergeSort = (array) => {
   let animations = []
+  if (array.length <= 1) return array
+  let auxiliaryArray = array.slice()
+  mergeSortHelper(array, 0, array.length - 1, auxiliaryArray, animations)
   return animations
 }
 
-export const quickSort = (array) => {
-  let animations = []
-  return animations
+const mergeSortHelper = (
+  mainArray,
+  startIdx,
+  endIdx,
+  auxiliaryArray,
+  animations
+) => {
+  if (startIdx === endIdx) return
+  const middleIdx = Math.floor((startIdx + endIdx) / 2)
+  mergeSortHelper(auxiliaryArray, startIdx, middleIdx, mainArray, animations)
+  mergeSortHelper(auxiliaryArray, middleIdx + 1, endIdx, mainArray, animations)
+  doMerge(mainArray, startIdx, middleIdx, endIdx, auxiliaryArray, animations)
+}
+
+const doMerge = (
+  mainArray,
+  startIdx,
+  middleIdx,
+  endIdx,
+  auxiliaryArray,
+  animations
+) => {
+  let k = startIdx
+  let i = startIdx
+  let j = middleIdx + 1
+
+  while (i <= middleIdx && j <= endIdx) {
+    // Record the comparison
+    animations.push([i, j, 'compare'])
+    if (auxiliaryArray[i] <= auxiliaryArray[j]) {
+      // Record the overwrite
+      animations.push([k, auxiliaryArray[i], 'overwrite'])
+      mainArray[k++] = auxiliaryArray[i++]
+    } else {
+      // Record the overwrite
+      animations.push([k, auxiliaryArray[j], 'overwrite'])
+      mainArray[k++] = auxiliaryArray[j++]
+    }
+  }
+  while (i <= middleIdx) {
+    // Record the comparison (redundant, but for consistency)
+    animations.push([i, i, 'compare'])
+    // Record the overwrite
+    animations.push([k, auxiliaryArray[i], 'overwrite'])
+    mainArray[k++] = auxiliaryArray[i++]
+  }
+  while (j <= endIdx) {
+    // Record the comparison (redundant, but for consistency)
+    animations.push([j, j, 'compare'])
+    // Record the overwrite
+    animations.push([k, auxiliaryArray[j], 'overwrite'])
+    mainArray[k++] = auxiliaryArray[j++]
+  }
 }

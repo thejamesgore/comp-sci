@@ -37,8 +37,8 @@ const ControlPanel = ({
     <div className="control-panel">
       <select onChange={(e) => onAlgorithmChange(e.target.value)}>
         <option value="bubbleSort">Bubble Sort</option>
-        <option value="selectionSort">selectionSort</option>
-        <option value="quickSort">Quick Sort</option>
+        <option value="selectionSort">Selection Sort</option>
+        <option value="mergeSort">Merge Sort</option>
       </select>
       <label>
         Array Size: {arraySize}

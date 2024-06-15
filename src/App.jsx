@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import { Header, ControlPanel, Visualiser, Statistics } from './components'
-import { bubbleSort, selectionSort, quickSort } from './utils/algos'
+import { bubbleSort, selectionSort, mergeSort } from './utils/algos'
 import { generateRandomArray } from './utils/utils'
 
 function App() {
@@ -29,8 +29,8 @@ function App() {
       case 'selectionSort':
         animations = selectionSort(array)
         break
-      case 'quickSort':
-        animations = quickSort(array)
+      case 'mergeSort':
+        animations = mergeSort(array)
         break
       default:
         animations = bubbleSort(array)
