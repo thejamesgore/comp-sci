@@ -1,6 +1,6 @@
 # comp-sci
 
-A visual demonstration of CompSci concepts and serves as a showcase of my understanding of these topics. By visualizing and explaining these concepts, I aim to reinforce my knowledge and address any gaps in my understanding. This process not only helps me but also offers a valuable resource for others learning these concepts.
+A visual demonstration of CompSci concepts that serves as a showcase of my understanding of these topics. By visualizing and explaining these concepts, I aim to reinforce my knowledge and address any gaps in my understanding. This process not only helps me but also offers a valuable resource for others learning these concepts.
 
 Concepts to cover:
 
