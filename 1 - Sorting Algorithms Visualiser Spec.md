@@ -43,6 +43,7 @@ I want to create a visually engaging and informative page that demonstrates diff
    - **Time Elapsed**: Shows the time taken to sort the array.
 
 6. **Responsive Design**: COMPLETE
+
    ✅ - Ensure the visualiser is responsive and works well on various devices, including desktops, tablets, and mobile phones.
 
 ### User Experience Flow
