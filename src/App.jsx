@@ -18,6 +18,7 @@ function App() {
 
   const generateNewArray = (newArray) => {
     setArray(newArray)
+    setAnimations([]) // Reset animations for the new array
   }
 
   const startSort = () => {
