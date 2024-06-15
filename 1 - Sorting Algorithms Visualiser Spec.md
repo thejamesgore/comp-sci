@@ -26,9 +26,11 @@ I want to create a visually engaging and informative page that demonstrates diff
 3. **visualisation Area**: COMPLETE
 
    ✅ - **Bars or Elements**: A series of bars or other visual elements representing the array to be sorted. Each element's height (or size) corresponds to its value.
+
    ✅ - **Color Coding**: Use different colors to indicate the current state of the elements. For example:
    -- Normal state (e.g., blue)
    -- Elements being compared (e.g., red)
+
    ✅ - **Animation**: Smooth transitions to show the swapping, shifting, or merging of elements. This helps users visually track the changes happening in the array.
 
 4. **Algorithm Explanation Panel**:
