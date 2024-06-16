@@ -34,13 +34,13 @@ const ControlPanel = ({
   }
 
   return (
-    <div className="control-panel">
+    <section className="control-panel">
       <select onChange={(e) => onAlgorithmChange(e.target.value)}>
         <option value="bubbleSort">Bubble Sort</option>
         <option value="selectionSort">Selection Sort</option>
         <option value="mergeSort">Merge Sort</option>
       </select>
-      <label>
+      <label className="label-text">
         Array Size: {arraySize}
         <input
           value={arraySize}
@@ -50,7 +50,7 @@ const ControlPanel = ({
           onChange={handleArraySizeChange}
         />
       </label>
-      <label>
+      <label className="label-text">
         Speed: Faster
         <input
           value={speed}
@@ -64,7 +64,7 @@ const ControlPanel = ({
       <button onClick={handleGenerateArray}>Generate New Array</button>
       <button onClick={handleStartSort}>Start</button>
       <div className={`array-container ${isSorting ? 'sorting' : ''}`}></div>
-    </div>
+    </section>
   )
 }
 

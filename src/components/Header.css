@@ -1,0 +1,54 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #282c34;
+    color: white;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    margin-right: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.icon-link {
+    color: white;
+    margin-left: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.icon-link:hover {
+    color: #61dafb;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.App {
+    text-align: center;
+}

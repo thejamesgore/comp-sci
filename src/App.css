@@ -11,11 +11,9 @@ body {
   padding: 20px;
 }
 
-/* Header Styles */
 header {
   text-align: center;
   padding: 20px 0;
-  background-color: #007acc;
   color: white;
 }
 
@@ -29,7 +27,6 @@ header p {
   font-size: 1.2em;
 }
 
-/* Control Panel Styles */
 .control-panel {
   display: flex;
   justify-content: space-around;
@@ -49,7 +46,8 @@ header p {
   font-size: 1em;
 }
 
-/* Visualization Area Styles */
+
+
 .visualizer {
   display: flex;
   align-items: flex-end;
@@ -79,7 +77,6 @@ header p {
   background-color: green;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .control-panel {
     flex-direction: column;
@@ -97,3 +94,40 @@ header p {
     margin: 0 1px;
   }
 }
+
+body.dark-mode .control-panel {
+  background-color: #282c34;
+  color: white;
+}
+
+body.dark-mode select,
+body.dark-mode input[type="range"] {
+  background-color: #333;
+  color: white;
+  border: 1px solid #444;
+}
+
+body.dark-mode section > button {
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.App {
+  text-align: center;
+}
+
+body.dark-mode label,
+body.dark-mode .label-text {
+  color: white;
+}
+
+
