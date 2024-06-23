@@ -1,7 +1,12 @@
 import React from 'react'
+import NodeVisualiser from '../components/NodeVisualiser'
 
 const Nodes = () => {
-  return <div>Nodes</div>
+  return (
+    <div>
+      <NodeVisualiser />
+    </div>
+  )
 }
 
 export default Nodes

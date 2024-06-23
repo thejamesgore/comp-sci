@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-left">
-        <Link to="/sorting-visualiser" className="nav-link">
+        <Link to="/" className="nav-link">
           Sorting Visualizer
         </Link>
         <Link to="/nodes" className="nav-link">

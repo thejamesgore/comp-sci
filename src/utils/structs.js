@@ -45,3 +45,5 @@ class LinkedList {
     return elements
   }
 }
+
+export default { Node, LinkedList }
