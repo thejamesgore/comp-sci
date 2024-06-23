@@ -13,6 +13,9 @@ const Header = () => {
         <Link to="/sorting-visualiser" className="nav-link">
           Sorting Visualizer
         </Link>
+        <Link to="/nodes" className="nav-link">
+          Nodes
+        </Link>
       </div>
       <div className="header-right">
         <a
