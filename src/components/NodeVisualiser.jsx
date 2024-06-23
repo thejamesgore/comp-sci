@@ -1,26 +1,47 @@
 import React, { useState } from 'react'
-// import LinkedList
+import { LinkedList } from '../utils/structs'
 import './NodeVisualiser.css'
 
 const NodeVisualiser = () => {
+  const [list] = useState(new LinkedList())
   const [elements, setElements] = useState([])
   const [inputValue, setInputValue] = useState('')
+  const [removeValue, setRemoveValue] = useState('')
 
   const addElement = () => {
     if (inputValue.trim() === '') return
-    setElements([...elements, inputValue])
+    list.append(inputValue)
+    setElements(list.toArray())
     setInputValue('')
+  }
+
+  const removeElement = () => {
+    if (removeValue.trim() === '') return
+    list.remove(removeValue)
+    setElements(list.toArray())
+    setRemoveValue('')
   }
 
   return (
     <div className="nodevisualizer">
-      <input
-        type="text"
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
-        placeholder="Enter value"
-      />
-      <button onClick={addElement}>Add</button>
+      <div>
+        <input
+          type="text"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          placeholder="Enter value"
+        />
+        <button onClick={addElement}>Add</button>
+      </div>
+      <div>
+        <input
+          type="text"
+          value={removeValue}
+          onChange={(e) => setRemoveValue(e.target.value)}
+          placeholder="Remove value"
+        />
+        <button onClick={removeElement}>Remove</button>
+      </div>
       <div className="list">
         {elements.map((element, index) => (
           <div key={index} className="node">
