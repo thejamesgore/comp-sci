@@ -15,6 +15,13 @@ const ListsVisualiser = () => {
     setInputValue('')
   }
 
+  const prependElement = () => {
+    if (inputValue.trim() === '') return
+    list.prepend(inputValue)
+    setElements(list.toArray())
+    setInputValue('')
+  }
+
   const removeElement = () => {
     if (removeValue.trim() === '') return
     list.remove(removeValue)
@@ -38,7 +45,9 @@ const ListsVisualiser = () => {
           onChange={(e) => setInputValue(e.target.value)}
           placeholder="Enter value"
         />
-        <button onClick={addElement}>Add</button>
+        <button onClick={addElement}>Append</button>
+        <button onClick={prependElement}>Prepend</button>{' '}
+        {/* Button for prepend */}
       </div>
       <div>
         <input

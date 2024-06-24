@@ -25,6 +25,19 @@ class LinkedList {
     return newNode
   }
 
+  prepend(value) {
+    const newNode = new Node(value)
+
+    if (!this.head) {
+      this.head = newNode
+      return newNode
+    }
+
+    newNode.next = this.head
+    this.head = newNode
+    return newNode
+  }
+
   toArray() {
     const elements = []
     let current = this.head
@@ -79,6 +92,15 @@ class LinkedList {
     const poppedNode = current.next
     current.next = null
     return poppedNode
+  }
+
+  insert(value) {
+    if (!this.head) {
+      return null
+    }
+
+    if (!this.head.next) {
+    }
   }
 }
 
