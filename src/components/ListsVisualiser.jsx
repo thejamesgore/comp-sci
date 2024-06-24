@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { LinkedList } from '../utils/structs'
-import './NodeVisualiser.css'
+import './ListsVisualiser.css'
 
-const NodeVisualiser = () => {
+const ListsVisualiser = () => {
   const [list] = useState(new LinkedList())
   const [elements, setElements] = useState([])
   const [inputValue, setInputValue] = useState('')
@@ -23,7 +23,7 @@ const NodeVisualiser = () => {
   }
 
   return (
-    <div className="nodevisualizer">
+    <div className="ListsVisualiser">
       <div>
         <input
           type="text"
@@ -56,4 +56,4 @@ const NodeVisualiser = () => {
   )
 }
 
-export default NodeVisualiser
+export default ListsVisualiser

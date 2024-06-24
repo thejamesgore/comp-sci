@@ -13,8 +13,8 @@ const Header = () => {
         <Link to="/" className="nav-link">
           Sorting Visualizer
         </Link>
-        <Link to="/nodes" className="nav-link">
-          Nodes
+        <Link to="/lists" className="nav-link">
+          Lists
         </Link>
       </div>
       <div className="header-right">

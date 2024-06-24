@@ -1,4 +1,4 @@
 import SortingVisualiser from './SortingVisualiser'
-import Nodes from './Nodes'
+import Lists from './Lists'
 
-export { SortingVisualiser, Nodes }
+export { SortingVisualiser, Lists }
