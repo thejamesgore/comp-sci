@@ -1,4 +1,3 @@
-/* src/components/ListsVisualiser.css */
 
 .lists-visualiser {
     text-align: center;
@@ -15,12 +14,13 @@ input {
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .node {
     display: flex;
     align-items: center;
-    margin: 0 10px;
+    margin: 10px;
 }
 
 .circle {
@@ -33,7 +33,6 @@ input {
     align-items: center;
     background-color: #f0f0f0;
     color: #000;
-    /* Ensure text color is visible */
 }
 
 .arrow {
@@ -51,10 +50,43 @@ body.dark-mode .circle {
     border: 2px solid #fff;
     background-color: #444;
     color: #fff;
-    /* Ensure text color is visible */
+
 }
 
 body.dark-mode .arrow,
 body.dark-mode .null {
     color: #fff;
+}
+
+
+@media (max-width: 768px) {
+    .list {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .node {
+        flex-direction: column;
+
+        margin: 10px 0;
+
+    }
+
+    .arrow {
+        transform: rotate(90deg);
+
+        margin: 10px 0;
+
+    }
+}
+
+@media (max-width: 480px) {
+    .circle {
+        width: 40px;
+
+        height: 40px;
+        font-size: 14px;
+
+    }
 }
