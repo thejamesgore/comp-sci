@@ -3,7 +3,7 @@ import { LinkedList } from '../utils/structs'
 import './ListsVisualiser.css'
 
 const ListsVisualiser = () => {
-  const [list] = useState(new LinkedList())
+  const [list] = useState(() => new LinkedList())
   const [elements, setElements] = useState([])
   const [inputValue, setInputValue] = useState('')
   const [removeValue, setRemoveValue] = useState('')
@@ -22,8 +22,15 @@ const ListsVisualiser = () => {
     setRemoveValue('')
   }
 
+  const popElement = () => {
+    const poppedNode = list.pop()
+    if (poppedNode) {
+      setElements(list.toArray())
+    }
+  }
+
   return (
-    <div className="ListsVisualiser">
+    <div className="lists-visualiser">
       <div>
         <input
           type="text"
@@ -41,6 +48,9 @@ const ListsVisualiser = () => {
           placeholder="Remove value"
         />
         <button onClick={removeElement}>Remove</button>
+      </div>
+      <div>
+        <button onClick={popElement}>Pop</button>
       </div>
       <div className="list">
         {elements.map((element, index) => (

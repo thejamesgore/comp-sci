@@ -5,8 +5,6 @@ import { bubbleSort, selectionSort, mergeSort } from '../utils/algos'
 import { generateRandomArray } from '../utils/utils'
 
 function SortingVisualiser() {
-  console.log(`does sortingVisualiser render`)
-
   const [array, setArray] = useState([50, 40, 30, 20, 10])
   const [animations, setAnimations] = useState([])
   const [selectedAlgorithm, setSelectedAlgorithm] = useState('bubbleSort')

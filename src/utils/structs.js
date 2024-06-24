@@ -25,6 +25,16 @@ class LinkedList {
     return newNode
   }
 
+  toArray() {
+    const elements = []
+    let current = this.head
+    while (current) {
+      elements.push(current.value)
+      current = current.next
+    }
+    return elements
+  }
+
   remove(value) {
     if (!this.head) {
       return null
@@ -50,14 +60,25 @@ class LinkedList {
     return null
   }
 
-  toArray() {
-    const elements = []
+  pop() {
+    if (!this.head) {
+      return null
+    }
+
+    if (!this.head.next) {
+      const poppedNode = this.head
+      this.head = null
+      return poppedNode
+    }
+
     let current = this.head
-    while (current) {
-      elements.push(current.value)
+    while (current.next && current.next.next) {
       current = current.next
     }
-    return elements
+
+    const poppedNode = current.next
+    current.next = null
+    return poppedNode
   }
 }
 
