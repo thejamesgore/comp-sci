@@ -94,12 +94,35 @@ class LinkedList {
     return poppedNode
   }
 
-  insert(value) {
-    if (!this.head) {
-      return null
+  insert(value, position) {
+    if (position < 0) {
+      throw new Error('Position must be a non-negative integer.')
     }
 
-    if (!this.head.next) {
+    const newNode = new Node(value)
+
+    if (position === 0) {
+      return this.prepend(value)
+    }
+
+    let current = this.head
+    let previous = null
+    let index = 0
+
+    while (current && index < position) {
+      previous = current
+      current = current.next
+      index++
+    }
+
+    if (index === position) {
+      newNode.next = current
+      if (previous) {
+        previous.next = newNode
+      }
+      return newNode
+    } else {
+      throw new Error('Position out of bounds.')
     }
   }
 }

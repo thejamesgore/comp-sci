@@ -1,3 +1,5 @@
+// src/components/ListsVisualiser.js
+
 import React, { useState } from 'react'
 import { LinkedList } from '../utils/structs'
 import './ListsVisualiser.css'
@@ -7,6 +9,8 @@ const ListsVisualiser = () => {
   const [elements, setElements] = useState([])
   const [inputValue, setInputValue] = useState('')
   const [removeValue, setRemoveValue] = useState('')
+  const [insertValue, setInsertValue] = useState('')
+  const [position, setPosition] = useState('')
 
   const addElement = () => {
     if (inputValue.trim() === '') return
@@ -20,6 +24,16 @@ const ListsVisualiser = () => {
     list.prepend(inputValue)
     setElements(list.toArray())
     setInputValue('')
+  }
+
+  const insertElement = () => {
+    if (insertValue.trim() === '' || position.trim() === '') return
+    const pos = parseInt(position, 10)
+    if (isNaN(pos) || pos < 0) return
+    list.insert(insertValue, pos)
+    setElements(list.toArray())
+    setInsertValue('')
+    setPosition('')
   }
 
   const removeElement = () => {
@@ -45,9 +59,23 @@ const ListsVisualiser = () => {
           onChange={(e) => setInputValue(e.target.value)}
           placeholder="Enter value"
         />
-        <button onClick={addElement}>Append</button>
-        <button onClick={prependElement}>Prepend</button>{' '}
-        {/* Button for prepend */}
+        <button onClick={addElement}>Add</button>
+        <button onClick={prependElement}>Prepend</button>
+      </div>
+      <div>
+        <input
+          type="text"
+          value={insertValue}
+          onChange={(e) => setInsertValue(e.target.value)}
+          placeholder="Insert value"
+        />
+        <input
+          type="text"
+          value={position}
+          onChange={(e) => setPosition(e.target.value)}
+          placeholder="Position"
+        />
+        <button onClick={insertElement}>Insert</button>
       </div>
       <div>
         <input
