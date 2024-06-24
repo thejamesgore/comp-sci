@@ -1,3 +1,5 @@
+/* src/components/ListsVisualiser.css */
+
 .lists-visualiser {
     text-align: center;
     margin-top: 50px;
@@ -30,6 +32,8 @@ input {
     justify-content: center;
     align-items: center;
     background-color: #f0f0f0;
+    color: #000;
+    /* Ensure text color is visible */
 }
 
 .arrow {
@@ -40,4 +44,17 @@ input {
 .null {
     font-size: 24px;
     margin-left: 10px;
+}
+
+/* Dark mode styles */
+body.dark-mode .circle {
+    border: 2px solid #fff;
+    background-color: #444;
+    color: #fff;
+    /* Ensure text color is visible */
+}
+
+body.dark-mode .arrow,
+body.dark-mode .null {
+    color: #fff;
 }
