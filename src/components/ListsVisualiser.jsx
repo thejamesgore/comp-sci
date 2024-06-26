@@ -1,5 +1,3 @@
-// src/components/ListsVisualiser.js
-
 import React, { useState } from 'react'
 import { LinkedList } from '../utils/structs'
 import './ListsVisualiser.css'

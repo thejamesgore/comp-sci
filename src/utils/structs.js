@@ -1,7 +1,138 @@
 class Node {
-  constructor(value, next = null) {
+  constructor(value, next = null, prev = null) {
     this.next = next
+    this.prev = prev
     this.value = value
+  }
+}
+
+class DoublyLinkedList {
+  constructor() {
+    this.head = null
+    this.tail = null
+  }
+
+  append(value) {
+    const newNode = new Node(value)
+    if (!this.head) {
+      this.head = newNode
+      this.tail = newNode
+      return newNode
+    }
+
+    this.tail.next = newNode
+    newNode.prev = this.tail
+    this.tail = newNode
+    return newNode
+  }
+
+  prepend(value) {
+    const newNode = new Node(value)
+    if (!this.head) {
+      this.head = newNode
+      this.tail = newNode
+      return newNode
+    }
+
+    newNode.next = this.head
+    this.head.prev = newNode
+    this.head = newNode
+    return newNode
+  }
+
+  insert(value, position) {
+    if (position < 0) {
+      throw new Error('Position must be a non-negative integer.')
+    }
+
+    const newNode = new Node(value)
+    if (position === 0) {
+      return this.prepend(value)
+    }
+
+    let current = this.head
+    let previous = null
+    let index = 0
+
+    while (current && index < position) {
+      previous = current
+      current = current.next
+      index++
+    }
+
+    if (index === position) {
+      newNode.next = current
+      newNode.prev = previous
+      if (previous) {
+        previous.next = newNode
+      }
+      if (current) {
+        current.prev = newNode
+      }
+      if (!newNode.next) {
+        this.tail = newNode
+      }
+      return newNode
+    } else {
+      throw new Error('Position out of bounds.')
+    }
+  }
+
+  toArray() {
+    const elements = []
+    let current = this.head
+    while (current) {
+      elements.push(current.value)
+      current = current.next
+    }
+    return elements
+  }
+
+  remove(value) {
+    if (!this.head) {
+      return null
+    }
+
+    let current = this.head
+    while (current && current.value !== value) {
+      current = current.next
+    }
+
+    if (current) {
+      if (current.prev) {
+        current.prev.next = current.next
+      }
+      if (current.next) {
+        current.next.prev = current.prev
+      }
+      if (current === this.head) {
+        this.head = current.next
+      }
+      if (current === this.tail) {
+        this.tail = current.prev
+      }
+      return current
+    }
+
+    return null // Node not found
+  }
+
+  pop() {
+    if (!this.tail) {
+      console.log('List is empty')
+      return null
+    }
+
+    const poppedNode = this.tail
+    if (this.tail.prev) {
+      this.tail.prev.next = null
+      this.tail = this.tail.prev
+    } else {
+      this.head = null
+      this.tail = null
+    }
+    console.log('Popped node:', poppedNode.value)
+    return poppedNode
   }
 }
 
@@ -127,4 +258,4 @@ class LinkedList {
   }
 }
 
-export { Node, LinkedList }
+export { Node, LinkedList, DoublyLinkedList }
