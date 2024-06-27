@@ -1,46 +1,46 @@
-import { useState, useEffect } from 'react'
-import '../App.css'
-import { ControlPanel, Visualiser } from '../components'
-import { bubbleSort, selectionSort, mergeSort } from '../utils/algos'
-import { generateRandomArray } from '../utils/utils'
+import React, { useState, useEffect } from 'react';
+import '../App.css';
+import { ControlPanel, Visualiser } from '../components';
+import { bubbleSort, selectionSort, mergeSort, Animation } from '../utils/algos';
+import { generateRandomArray } from '../utils/utils';
 
-function SortingVisualiser() {
-  const [array, setArray] = useState([50, 40, 30, 20, 10])
-  const [animations, setAnimations] = useState([])
-  const [selectedAlgorithm, setSelectedAlgorithm] = useState('bubbleSort')
-  const [speed, setSpeed] = useState(10)
+const SortingVisualiser: React.FC = () => {
+  const [array, setArray] = useState<number[]>([50, 40, 30, 20, 10]);
+  const [animations, setAnimations] = useState<Animation[]>([]);
+  const [selectedAlgorithm, setSelectedAlgorithm] = useState<string>('bubbleSort');
+  const [speed, setSpeed] = useState<number>(10);
 
   useEffect(() => {
-    const initialArray = generateRandomArray(50)
-    setArray(initialArray)
-  }, [])
+    const initialArray = generateRandomArray(50);
+    setArray(initialArray);
+  }, []);
 
-  const generateNewArray = (newArray) => {
-    setArray(newArray)
-    setAnimations([])
-  }
+  const generateNewArray = (newArray: number[]) => {
+    setArray(newArray);
+    setAnimations([]);
+  };
 
   const startSort = () => {
-    let animations
+    let animations: Animation[];
     switch (selectedAlgorithm) {
       case 'bubbleSort':
-        animations = bubbleSort(array)
-        break
+        animations = bubbleSort(array);
+        break;
       case 'selectionSort':
-        animations = selectionSort(array)
-        break
+        animations = selectionSort(array);
+        break;
       case 'mergeSort':
-        animations = mergeSort(array)
-        break
+        animations = mergeSort(array);
+        break;
       default:
-        animations = bubbleSort(array)
+        animations = bubbleSort(array);
     }
-    setAnimations(animations)
-  }
+    setAnimations(animations);
+  };
 
-  const handleSpeedChange = (newSpeed) => {
-    setSpeed(newSpeed)
-  }
+  const handleSpeedChange = (newSpeed: number) => {
+    setSpeed(newSpeed);
+  };
 
   return (
     <div className="App">
@@ -52,7 +52,7 @@ function SortingVisualiser() {
       />
       <Visualiser array={array} animations={animations} speed={speed} />
     </div>
-  )
-}
+  );
+};
 
-export default SortingVisualiser
+export default SortingVisualiser;
