@@ -1,11 +1,11 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { FaGithub, FaSun, FaMoon } from 'react-icons/fa'
-import { useTheme } from '../context/ThemeContext'
-import './Header.css'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { FaGithub, FaSun, FaMoon } from 'react-icons/fa';
+import { useTheme } from '../context/ThemeContext';
+import './Header.css';
 
-const Header = () => {
-  const { isDarkMode, toggleDarkMode } = useTheme()
+const Header: React.FC = () => {
+  const { isDarkMode, toggleDarkMode } = useTheme();
 
   return (
     <header className="header">
@@ -31,7 +31,7 @@ const Header = () => {
         </button>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
