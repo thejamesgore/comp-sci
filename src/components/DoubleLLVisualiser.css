@@ -1,84 +1,56 @@
-.lists-visualiser {
-    text-align: center;
-    margin-top: 50px;
-}
-
-input {
-    margin-right: 10px;
-    padding: 5px;
-}
-
-.list {
+.doublell-visualiser {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+}
+
+.doubly-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
     margin-top: 20px;
 }
 
 .node {
     display: flex;
     align-items: center;
-    margin: 0 10px;
+    position: relative;
 }
 
 .circle {
-    width: 50px;
-    height: 50px;
-    border: 2px solid #000;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
+    background-color: lightblue;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f0f0f0;
-    color: #000;
-    /* Ensure text color is visible */
+    margin: 0 10px;
 }
 
 .arrow {
+    font-size: 20px;
     margin: 0 10px;
-    font-size: 24px;
+}
+
+.arrows {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.arrow.up {
+    transform: rotate(-90deg);
+}
+
+.arrow.down {
+    transform: rotate(90deg);
 }
 
 .null {
-    font-size: 24px;
-    margin-left: 10px;
-}
-
-/* Dark mode styles */
-body.dark-mode .circle {
-    border: 2px solid #fff;
-    background-color: #444;
-    color: #fff;
-    /* Ensure text color is visible */
-}
-
-body.dark-mode .arrow,
-body.dark-mode .null {
-    color: #fff;
-}
-
-/* Media queries for mobile responsiveness */
-@media (max-width: 768px) {
-    .list {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .node {
-        flex-direction: column;
-        margin: 10px 0;
-    }
-
-    .arrow {
-        transform: rotate(90deg);
-        margin: 10px 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .circle {
-        width: 40px;
-        height: 40px;
-        font-size: 14px;
-    }
+    margin: 0 10px;
+    font-size: 20px;
 }
