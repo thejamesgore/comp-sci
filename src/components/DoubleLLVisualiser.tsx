@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { DoublyLinkedList } from '../utils/structs'; // Ensure this path is correct
+import { DoublyLinkedList } from '../utils/structs'; 
 import './DoubleLLVisualiser.css';
 
 const DoubleLLVisualiser = () => {
