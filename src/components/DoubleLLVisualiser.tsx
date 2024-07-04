@@ -88,22 +88,27 @@ const DoubleLLVisualiser = () => {
         <button onClick={popElement}>Pop</button>
       </div>
       <div className="doubly-list">
-        {elements.length === 0 && <div className="null">null</div>}
+        <div className="null">null</div>
         {elements.map((element, index) => (
           <React.Fragment key={index}>
-            {index === 0 && <div className="null">null</div>}
             <div className="node">
-              <div className="circle">{element}</div>
-              {index < elements.length - 1 && (
+              {index > 0 && (
                 <div className="arrows">
                   <div className="arrow up">↑</div>
                   <div className="arrow down">↓</div>
                 </div>
               )}
+              <div className="circle">{element}</div>
             </div>
-            {index === elements.length - 1 && <div className="null">null</div>}
+            {index === elements.length - 1 && (
+              <div className="arrows">
+                <div className="arrow up">↑</div>
+                <div className="arrow down">↓</div>
+              </div>
+            )}
           </React.Fragment>
         ))}
+        <div className="null">null</div>
       </div>
     </div>
   );

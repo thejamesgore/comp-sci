@@ -14,7 +14,6 @@
 .node {
     display: flex;
     align-items: center;
-    position: relative;
 }
 
 .circle {
@@ -28,26 +27,23 @@
     margin: 0 10px;
 }
 
-.arrow {
-    font-size: 20px;
-    margin: 0 10px;
-}
-
 .arrows {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+}
+
+.arrow {
+    font-size: 20px;
+    margin: 2px 0;
 }
 
 .arrow.up {
-    transform: rotate(-90deg);
+    transform: rotate(90deg);
 }
 
 .arrow.down {
-    transform: rotate(90deg);
+    transform: rotate(-90deg);
 }
 
 .null {

@@ -258,4 +258,35 @@ class LinkedList {
   }
 }
 
-export { Node, LinkedList, DoublyLinkedList }
+class Queue {
+  constructor() {
+    this.list = new DoublyLinkedList()
+  }
+
+  enqueue(value) {
+    this.list.append(value)
+  }
+
+  dequeue() {
+    if (!this.list.head) {
+      return null
+    }
+    const dequeuedValue = this.list.head.value
+    this.list.remove(dequeuedValue)
+    return dequeuedValue
+  }
+
+  peek() {
+    return this.list.head ? this.list.head.value : null
+  }
+
+  isEmpty() {
+    return this.list.head === null
+  }
+
+  toArray() {
+    return this.list.toArray()
+  }
+}
+
+export { Node, LinkedList, DoublyLinkedList, Queue }
