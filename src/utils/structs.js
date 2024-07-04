@@ -289,4 +289,31 @@ class Queue {
   }
 }
 
-export { Node, LinkedList, DoublyLinkedList, Queue }
+class Stack {
+  constructor() {
+    this.list = new LinkedList()
+  }
+
+  push(value) {
+    this.list.prepend(value)
+  }
+
+  pop() {
+    const node = this.list.pop()
+    return node ? node.value : null
+  }
+
+  peek() {
+    return this.list.peek()
+  }
+
+  isEmpty() {
+    return this.list.isEmpty()
+  }
+
+  toArray() {
+    return this.list.toArray()
+  }
+}
+
+export { Node, LinkedList, DoublyLinkedList, Queue, Stack }
